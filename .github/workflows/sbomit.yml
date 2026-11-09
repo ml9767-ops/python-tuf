@@ -25,5 +25,9 @@ jobs:
       - name: Install build frontend
         run: python -m pip install build
 
-      - name: Build
-        run: python -m build
+      - name: Build under SBOMit
+        uses: Uk-jake/sbomit-pipeline-runner@main
+        with:
+          build-command: python -m build
+          sbom-format: spdx23
+          use-syft: true
